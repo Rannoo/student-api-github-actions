@@ -11,7 +11,7 @@ jobs:
           java-version: '15'
           distribution: 'adopt'
       - name: Build artifact with Maven
-        run: mvn clean install
+        run: mvn clean install -DskipTests
       - name: running docker compose file
         run: docker-compose up -d
       - name: list all images
