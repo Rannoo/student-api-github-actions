@@ -1,0 +1,15 @@
+name: Deployment Workflow
+on: push
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: running docker compose file
+        run: docker-compose up -d
+      - name: list all images
+        run: docker images
+      - name: list running containers
+        run: docker ps
+      - name: list all containers
+        run: docker ps -a
